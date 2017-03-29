@@ -85,7 +85,7 @@ function Pager.replaceUrl (name, value);
 ## Copyright & License
 Copyright (c) 2017 He Yuanlun
 
-BootstrapPager is available under the MIT license. See the [LICENSE file] [7]
+BootstrapPager is available under the MIT license. See the [LICENSE file][7]
 For more information.
 
-[7.1]: ./LICENSE.txt
+[7]: ./LICENSE.txt

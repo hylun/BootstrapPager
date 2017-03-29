@@ -88,6 +88,6 @@ Copyright (c) 2017 He Yuanlun
 BootstrapPager is available under the MIT license. See the [LICENSE file][7]
 for more information.
 
-[7.1]: ./LICENSE.txt
+[7]: ./LICENSE.txt
 
 
