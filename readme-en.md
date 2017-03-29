@@ -80,7 +80,7 @@ function Pager.replaceUrl (name, value);
 ```
 
 ## Author
-** He Yuanlun ** [blog] (https://my.oschina.net/alun)
+** He Yuanlun ** [blog](https://my.oschina.net/alun)
 
 ## Copyright & License
 Copyright (c) 2017 He Yuanlun
