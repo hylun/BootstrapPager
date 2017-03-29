@@ -1,103 +1,91 @@
-# A simply Pagination Plugin with Bootstrap
+# An exquisite Bootstrap Pagination lugin
 
-This is an extension script to jQuery Datatables.  It allows you to override the default pager for one with a textbox for entering page numbers.  It also implements a bootstrap highlight and glyphicons.  It is customizable and intuitive.
+This is a javascript implementation Bootstrap Pagination plugin, very fine small, you do not need to rely on any third-party library, only through a simple reference call, you can dynamically display Bootstrap paging components.
 
-![Screenshot 1](https://raw.github.com/chadkuehn/bootstrapPager/master/asset/screenshot1.png)
+! [Style one] (https://raw.github.com/hylun/BootstrapPager/master/asset/screenshot1.png)
 
-![Screenshot 2](https://raw.github.com/chadkuehn/bootstrapPager/master/asset/screenshot2.png)
+! [Style two] (https://raw.github.com/hylun/BootstrapPager/master/asset/screenshot2.png)
 
-## Dependencies
- - [jQuery](https://github.com/jquery/jquery) (v1.64 or newer)
- - [jQuery DataTables](https://github.com/DataTables/DataTables) (v1.9.0 or newer)
- - [Twitter Bootstrap](https://github.com/twbs/bootstrap) (v3.0 or newer)
+## style dependencies
+ - [Twitter Bootstrap] (http://getbootstrap.com) (v3.0 or newer)
 
-## Usage
-Download the [archive](https://github.com/chadkuehn/BootstrapPager/releases/latest) or install the [nuget](https://www.nuget.org/packages/DatatablePaginateBootstrap/).
+## usage
+Download [attachments] (https://github.com/hylun/BootstrapPager/releases/latest).
 
-Add the script to the page after the dependencies:
+Copy the dist/bootstrapPager.js file to your project directory, such as the js directory,
+Add a reference to this js in the page:
 
 ```html
-<script type="text/javascript" src="~/Scripts/bootstrapPager.min.js"></script>
+<script type = "text/javascript" src = "~/js/bootstrapPager.js"> </script>
 ```
 
-**BASIC:**  
-In your dataTable declaration select this plugin:
+** basic usage **
 ```javascript
-$('#tbl').DataTable({
-    pagingType: "bootstrapPager",
-    ...
-});
+Document.write (Pager ({
+    TotalCount: 150 // total number of 150
+}));
 ```
-It’s as easy as that! 
+Its that simple!
 
 
-**ADVANCED:**  
-If you want to adjust some settings add the `pagerSettings` object:
+** Advanced usage **
 ```javascript
-$('#tbl').DataTable({
-    pagingType: "bootstrapPager",
-    pagerSettings: {
-        textboxWidth: 70,
-        firstIcon: "",
-        previousIcon: "glyphicon glyphicon-arrow-left",
-        nextIcon: "glyphicon glyphicon-arrow-right",
-        lastIcon: "",
-        searchOnEnter: true,
-        language: "Page ~ of ~ pages"
-    },
-    ...
-});
+Document.write (Pager ({
+    TotalCount: 150,  // total number of 150
+    PageSize: 6,      // Show 6 per page, default 10
+    ButtonSize: 6,    // show 6 buttons, default 10
+    PageParam: 'p',   // The page parameter is named 'p' and defaults is 'page'
+    ClassName: 'pagination',     // paged style
+    PrevButton: 'previous page', // previous button
+    NextButton: 'next page',     // next page button
+}));
 ```
-The above settings would enlarge the textbox, change the icons from chevrons to arrows, remove the first and last buttons, and make it so searching requires an ENTER press.
 
-If you are a FontAwesome fan simply reference the library and use those classes instead:
+You can also use the built-in method:
 
 ```javascript
-$('#tbl').DataTable({
-    pagingType: "bootstrapPager",
-    pagerSettings: {
-       firstIcon: "fa fa-angle-double-left fa-2x",
-       previousIcon: "fa fa-angle-left fa-2x",
-       nextIcon: "fa fa-angle-right fa-2x",
-       lastIcon: "fa  fa-angle-double-right fa-2x"
-    },
-    ...
-});
+Document.write ('url in the page parameter value:' + Pager.getParam ('page'));
+Document.write ('replace Url in the page parameter value of 3 get the address:' + Pager.replaceUrl ('page', 3));
 ```
 
-## Features
- - Uses glyphicons for image buttons (a font built into bootstrap)
- - Intuitive navigation images
- - Properly handles  ALL (or -1) as a Length
- - Hides pager if no records found (instead of showing Page 0 of 0)
- - Styles and icons can be overridden
- - Navigate on ENTER instead of every keystroke to conserve AJAX hits
- - Alter the language (i.e., use páginas instead of pages)
- - Set options easily through the pagerSettings object
 
 ## API
-**PagerSettings:**
+```javascript
+/ **
+* Get the paging html string for displaying paging
+* @ Param options json objects, attributes are:
+Total total number of total
+* PageSize // shows the number of pages per page, the default 10
+* ButtonSize / / show the number of buttons, the default 10
+* PageParam // page parameter name, default is 'page'
+* ClassName // paging style, defaults to 'pagination'
+* PrevButton // previous button, default <<
+* NextButton // next page button, default >>
+** /
+function Pager (options);
 
- - textboxWidth
- - firstIcon
- - previousIcon
- - nextIcon
- - lastIcon
- - searchOnEnter
+/ **
+* Get the url parameter
+* @ Parame name The name of the parameter to be obtained
+** /
+function Pager.getParam (name);
 
+/ **
+* Replace urlm with a value for a parameter
+* @ Parame name The name of the parameter that needs to be replaced
+* @ Parame name The value of the parameter to be replaced
+** /
+function Pager.replaceUrl (name, value);
 
+```
 
-## Support
-Found a bug or have a feature request? [Open an issue](https://github.com/chadkuehn/BootstrapPager/issues/new ).  
- 
 ## Author
-**Chad Kuehn** ([@ChadillacMan](https://twitter.com/ChadillacMan))  
-[http://chadkuehn.com](http://chadkuehn.com)
+** He Yuanlun ** [blog] (https://my.oschina.net/alun)
 
 ## Copyright & License
-Copyright (c) 2014 Chad Kuehn  
+Copyright (c) 2017 He Yuanlun
 
-BootstrapPager is available under the MIT license. See the [LICENSE file][7.1]
-for more information.
+BootstrapPager is available under the MIT license. See the [LICENSE file] [7]
+For more information.
 
 [7.1]: ./LICENSE.txt
