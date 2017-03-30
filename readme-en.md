@@ -16,7 +16,7 @@ Copy the dist/bootstrapPager.js file to your project directory, such as the js d
 Add a reference to this js in the page:
 
 ```html
-<script type = "text/javascript" src = "~/js/bootstrapPager.js"> </script>
+<script type="text/javascript" src="~/js/bootstrapPager.js"> </script>
 ```
 
 ** basic usage **
@@ -31,13 +31,13 @@ Its that simple!
 ** Advanced usage **
 ```javascript
 Document.write (Pager ({
-    TotalCount: 150,  // total number of 150
-    PageSize: 6,      // Show 6 per page, default 10
-    ButtonSize: 6,    // show 6 buttons, default 10
-    PageParam: 'p',   // The page parameter is named 'p' and defaults is 'page'
-    ClassName: 'pagination',// paged style
-    PrevButton: 'prev',     // previous button
-    NextButton: 'next',     // next page button
+    TotalCount: 150,  // total number of 150
+    PageSize: 6,      // Show 6 per page, default 10
+    ButtonSize: 6,    // show 6 buttons, default 10
+    PageParam: 'p',   // The page parameter is named 'p' and defaults is 'page'
+    ClassName: 'pagination',// paged style
+    PrevButton: 'prev',     // previous button
+    NextButton: 'next',     // next page button
     firstButton:'first',     // first page button
     lastButton:'last',       // last page button
 }));
