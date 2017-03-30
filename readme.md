@@ -2,9 +2,9 @@
 
 这是一个javascript实现的Bootstrap分页插件，非常精细小巧，您不需要依赖任何第三方类库，只需要通过简单的引用调用，即可实现动态显示Bootstrap分页组件。
 
-![样式一](https://raw.github.com/hylun/BootstrapPager/master/asset/screenshot1.png)
+![样式一](./asset/screenshot1.png)
 
-![样式二](https://raw.github.com/hylun/BootstrapPager/master/asset/screenshot2.png)
+![样式二](./asset/screenshot2.png)
 
 ## 样式依赖
  - [Twitter Bootstrap](http://getbootstrap.com) (v3.0 or newer)
@@ -38,6 +38,8 @@ document.write(Pager({
     className:'pagination',    //分页的样式
     prevButton:'上一页',       //上一页按钮
     nextButton:'下一页',       //下一页按钮
+    firstButton:'首页',      //第一页按钮
+    lastButton:'末页',       //最后一页按钮
 }));
 ```
 
@@ -54,13 +56,15 @@ document.write('替换Url中page参数值为3得到的地址：'+Pager.replaceUr
 /**
 *获取分页html字符串，用于显示分页
 *@Param options json对象，属性有:
-*       totalCount       //总条数
-*       pageSize         //每页显示内容条数，默认10
-*       buttonSize       //显示按钮的个数，默认10
-*       pageParam        //页码参数名，默认为'page'
-*       className        //分页的样式，默认为'pagination'
-*       prevButton       //上一页按钮，默认<<
-*       nextButton       //下一页按钮，默认>>
+*       totalCount       总条数
+*       pageSize         每页显示内容条数，默认10
+*       buttonSize       显示按钮的个数，默认10
+*       pageParam        页码参数名，默认为'page'
+*       className        分页的样式，默认为'pagination'
+*       prevButton       上一页按钮，默认<<
+*       nextButton       下一页按钮，默认>>
+*       firstButton      第一页按钮，默认不显示
+*       lastButton       最后一页按钮，默认不显示
 **/
 function Pager(options);
 

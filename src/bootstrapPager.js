@@ -9,13 +9,16 @@ var Pager = function(obj){
 	var className  = obj.className || 'pagination';	//分页的样式
 	var prevButton = obj.prevButton || '&laquo;';	//向前翻按钮
 	var nextButton = obj.nextButton || '&raquo;';	//向后翻按钮
-	Pager.getParam = function(name){					//获取参数
+	var firstButton = obj.firstButton || '';		//第一页按钮
+	var lastButton = obj.lastButton || '';			//最后一页按钮
+
+	Pager.getParam = function(name){				//获取参数
 		var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
 		var r = window.location.search.substr(1).match(reg); 
 		if (r != null) return unescape(r[2]); 
 		return null;
 	}
-	Pager.replaceUrl = function(name,value){				//替换url参数
+	Pager.replaceUrl = function(name,value){		//替换url参数
 		var oUrl = window.location.href; 
 		var reg = new RegExp("(^|&)(" + name + "=)([^&]*)(&|$)", "i"); 
 		var r = window.location.search.substr(1).match(reg); 
@@ -32,6 +35,9 @@ var Pager = function(obj){
 	page= page>1? page : 1;
 
 	var str = '<ul class="'+className+'">';
+	if(firstButton){
+		str += '<li class="prev"><a href="'+Pager.replaceUrl(pageParam,1)+'">'+firstButton+'</a></li>';
+	} 
 	if(page <= 1){
 		str += '<li class="prev disabled"><span>'+prevButton+'</span></li>';
 	}else{
@@ -49,6 +55,9 @@ var Pager = function(obj){
 		str += '<li class="next disabled"><span>'+nextButton+'</span></li>';
 	}else{
 		str += '<li class="next"><a href="'+Pager.replaceUrl(pageParam,page+1)+'">'+nextButton+'</a></li>';
+	}
+	if(lastButton){
+		str += '<li class="next"><a href="'+Pager.replaceUrl(pageParam,max)+'">'+lastButton+'</a></li>';
 	}
 	return str+'</ul>';
 }

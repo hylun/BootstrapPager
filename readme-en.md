@@ -2,9 +2,9 @@
 
 This is a javascript implementation Bootstrap Pagination plugin, very fine small, you do not need to rely on any third-party library, only through a simple reference call, you can dynamically display Bootstrap paging components.
 
-! [Style one] (https://raw.github.com/hylun/BootstrapPager/master/asset/screenshot1.png)
+![Style one] (./asset/screenshot1.png)
 
-! [Style two] (https://raw.github.com/hylun/BootstrapPager/master/asset/screenshot2.png)
+![Style two] (./asset/screenshot2.png)
 
 ## style dependencies
  - [Twitter Bootstrap] (http://getbootstrap.com) (v3.0 or newer)
@@ -35,9 +35,11 @@ Document.write (Pager ({
     PageSize: 6,      // Show 6 per page, default 10
     ButtonSize: 6,    // show 6 buttons, default 10
     PageParam: 'p',   // The page parameter is named 'p' and defaults is 'page'
-    ClassName: 'pagination',     // paged style
-    PrevButton: 'previous page', // previous button
-    NextButton: 'next page',     // next page button
+    ClassName: 'pagination',// paged style
+    PrevButton: 'prev',     // previous button
+    NextButton: 'next',     // next page button
+    firstButton:'first',     // first page button
+    lastButton:'last',       // last page button
 }));
 ```
 
@@ -51,30 +53,32 @@ Document.write ('replace Url in the page parameter value of 3 get the address:' 
 
 ## API
 ```javascript
-/ **
+/**
 * Get the paging html string for displaying paging
 * @ Param options json objects, attributes are:
 Total total number of total
-* PageSize // shows the number of pages per page, the default 10
-* ButtonSize / / show the number of buttons, the default 10
-* PageParam // page parameter name, default is 'page'
-* ClassName // paging style, defaults to 'pagination'
-* PrevButton // previous button, default <<
-* NextButton // next page button, default >>
-** /
+* PageSize      shows the number of pages per page, the default 10
+* ButtonSize    show the number of buttons, the default 10
+* PageParam     page parameter name, default is 'page'
+* ClassName     paging style, defaults to 'pagination'
+* PrevButton    previous button, default <<
+* NextButton    next page button, default >>
+* firstButton   first page button, not displayed by default
+* lastButton    last page button, not displayed by default
+**/
 function Pager (options);
 
-/ **
+/**
 * Get the url parameter
 * @ Parame name The name of the parameter to be obtained
-** /
+**/
 function Pager.getParam (name);
 
-/ **
+/**
 * Replace urlm with a value for a parameter
 * @ Parame name The name of the parameter that needs to be replaced
 * @ Parame name The value of the parameter to be replaced
-** /
+**/
 function Pager.replaceUrl (name, value);
 
 ```

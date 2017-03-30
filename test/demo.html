@@ -11,7 +11,7 @@
 
 <body>
 	
-    <script type="text/javascript" language="javascript" src="../dist/bootstrapPager.js"></script>
+    <script type="text/javascript" language="javascript" src="../src/bootstrapPager.js"></script>
 	<div class="container">	
 		<div>
 			<h4>Demo1:</h4>
@@ -26,13 +26,16 @@
 			<h4>Demo2:</h4>
 			<script>
 			document.write(Pager({
-			    totalCount:150, //总条数为150
-			    pageSize:6,    //每页显示6条内容，默认10
-			    buttonSize:6,   //显示6个按钮，默认10
-			    pageParam:'p',   //页码的参数名为'p'，默认为'page'
-			    className:'pagination',    //分页的样式
-			    prevButton:'上一页',       //上一页按钮
-			    nextButton:'下一页',       //下一页按钮
+			    totalCount:150, 		//总条数为150
+			    pageSize:5,    			//每页显示6条内容，默认10
+			    buttonSize:5,   		//显示6个按钮，默认10
+			    pageParam:'p',   		//页码的参数名为'p'，默认为'page'
+			    className:'pagination', //分页的样式
+			    prevButton:'上一页',     //上一页按钮
+			    nextButton:'下一页',     //下一页按钮
+			    firstButton:'首页',      //第一页按钮
+			    lastButton:'末页',       //最后一页按钮
+
 			}));
 			</script>
 		</div>
