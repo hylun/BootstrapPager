@@ -19,7 +19,7 @@ var Pager = function(obj){
 		return null;
 	}
 	Pager.replaceUrl = function(name,value){		//替换url参数
-		var oUrl = window.location.href; 
+		var oUrl = window.location.href.replace(window.location.hash,''); 
 		var reg = new RegExp("(^|&)(" + name + "=)([^&]*)(&|$)", "i"); 
 		var r = window.location.search.substr(1).match(reg); 
 		if (r != null) {
