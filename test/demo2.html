@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=2.0">
+
+	<title>Demo for bootstrap-4.1.1</title>
+	<link rel="stylesheet" type="text/css" href="../lib/bootstrap-4.1.1/css/bootstrap.min.css">
+
+</head>
+
+<body>
+	
+    <script type="text/javascript" language="javascript" src="../dist/bootstrapPager.js"></script>
+	<div class="container">	
+		<div>
+			<h4>Demo1:</h4>
+			<script>
+			document.write(Pager({
+				totalCount:150 //总条数为150
+			}));
+			</script>
+		</div>
+
+		<div>
+			<h4>Demo2:</h4>
+			<script>
+			document.write(Pager({
+			    totalCount:150, 		//总条数为150
+			    pageSize:5,    			//每页显示6条内容，默认10
+			    buttonSize:5,   		//显示6个按钮，默认10
+			    pageParam:'p',   		//页码的参数名为'p'，默认为'page'
+			    className:'pagination', //分页的样式
+			    prevButton:'上一页',     //上一页按钮
+			    nextButton:'下一页',     //下一页按钮
+			    firstButton:'首页',      //第一页按钮
+			    lastButton:'末页',       //最后一页按钮
+
+			}));
+			</script>
+		</div>
+
+		<div>
+			<h4>Demo3:</h4>
+			<script>
+			document.write('url中page参数值为：'+Pager.getParam('page'));
+			</script>
+		</div>
+
+		<div>
+			<h4>Demo4:</h4>
+			<script>
+			document.write('替换Url中page参数值为3得到的地址：'+Pager.replaceUrl('page',3));
+			</script>
+		</div>
+	</div>
+</body>
+</html>

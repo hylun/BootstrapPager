@@ -1,5 +1,6 @@
 /**
  * js分页
+ * version:0.3
  */
 var Pager = function(obj){
 	var totalCount = parseInt(obj.totalCount || 0);	//总条数
@@ -36,12 +37,12 @@ var Pager = function(obj){
 
 	var str = '<ul class="'+className+'">';
 	if(firstButton){
-		str += '<li class="prev"><a href="'+Pager.replaceUrl(pageParam,1)+'">'+firstButton+'</a></li>';
+		str += '<li class="page-item"><a class="page-link" href="'+Pager.replaceUrl(pageParam,1)+'">'+firstButton+'</a></li>';
 	} 
 	if(page <= 1){
-		str += '<li class="prev disabled"><span>'+prevButton+'</span></li>';
+		str += '<li class="page-item disabled"><span class="page-link">'+prevButton+'</span></li>';
 	}else{
-		str += '<li class="prev"><a href="'+Pager.replaceUrl(pageParam,page-1)+'">'+prevButton+'</a></li>';
+		str += '<li class="page-item"><a class="page-link" href="'+Pager.replaceUrl(pageParam,page-1)+'">'+prevButton+'</a></li>';
 	}
 	var max = Math.ceil(totalCount/pageSize);
 	var start = Math.floor((page-2)/(buttonSize-2))*(buttonSize-2);
@@ -49,15 +50,15 @@ var Pager = function(obj){
 	start = start>=0? start : 0;
 	for(var i=start+1;i<=start+buttonSize;i++){
 		if(i>max || buttonSize<3) break;
-		str += '<li'+(i==page?' class="active"' : '')+'><a href="'+Pager.replaceUrl(pageParam,i)+'">'+i+'</a></li>';
+		str += '<li'+(i==page?' class="active"' : '')+'><a class="page-link" href="'+Pager.replaceUrl(pageParam,i)+'">'+i+'</a></li>';
 	}
 	if(page >= max){
-		str += '<li class="next disabled"><span>'+nextButton+'</span></li>';
+		str += '<li class="page-item disabled"><span class="page-link">'+nextButton+'</span></li>';
 	}else{
-		str += '<li class="next"><a href="'+Pager.replaceUrl(pageParam,page+1)+'">'+nextButton+'</a></li>';
+		str += '<li class="page-item"><a class="page-link" href="'+Pager.replaceUrl(pageParam,page+1)+'">'+nextButton+'</a></li>';
 	}
 	if(lastButton){
-		str += '<li class="next"><a href="'+Pager.replaceUrl(pageParam,max)+'">'+lastButton+'</a></li>';
+		str += '<li class="page-item"><a class="page-link" href="'+Pager.replaceUrl(pageParam,max)+'">'+lastButton+'</a></li>';
 	}
 	return str+'</ul>';
 }
