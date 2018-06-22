@@ -87,7 +87,7 @@ function Pager.replaceUrl(name,value);
 **Hylun**  [Blog](http://blog.csdn.net/heylun)
 
 ## Copyright & License
-Copyright (c) 2017 He Yuanlun  
+Copyright (c) 2017 Hylun  
 
 BootstrapPager is available under the MIT license. See the [LICENSE file][7]
 for more information.

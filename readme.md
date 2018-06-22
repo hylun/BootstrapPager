@@ -1,16 +1,17 @@
-# An exquisite Bootstrap Pagination lugin
+# An exquisite Bootstrap Pagination plugin
 
 This is a javascript implementation Bootstrap Pagination plugin, very fine small, you do not need to rely on any third-party library, only through a simple reference call, you can dynamically display Bootstrap paging components.
+[中文](readme-CN.md)
 
-![Style one] (./asset/screenshot1.png)
+![Style one](./asset/screenshot1.png)
 
-![Style two] (./asset/screenshot2.png)
+![Style two](./asset/screenshot2.png)
 
 ## style dependencies
- - [Twitter Bootstrap] (http://getbootstrap.com) (v3.0 or newer)
+ - [Twitter Bootstrap](http://getbootstrap.com) (v3.0 or newer)
 
 ## usage
-Download [attachments] (https://github.com/hylun/BootstrapPager/releases/latest).
+Download [attachments](https://github.com/hylun/BootstrapPager/releases/latest).
 
 Copy the dist/bootstrapPager.js file to your project directory, such as the js directory,
 Add a reference to this js in the page:
@@ -87,7 +88,7 @@ function Pager.replaceUrl (name, value);
 **Hylun** [blog](http://blog.csdn.net/heylun)
 
 ## Copyright & License
-Copyright (c) 2017 He Yuanlun
+Copyright (c) 2017 Hylun
 
 BootstrapPager is available under the MIT license. See the [LICENSE file][7]
 For more information.
